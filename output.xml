@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200514 14:58:34.880" generator="Robot 3.2 (Python 2.7.17 on win32)">
+<suite source="C:\Users\Admin\Desktop\Robot-Selenium-Sample-master\Tests\sample_test.robot" id="s1" name="Sample Test">
+<test id="s1-t1" name="Example of connecting to Lambdatest via Robot Framework">
+<kw type="setup" name="Open test browser" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://lambdatest.github.io/sample-todo-app/</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+</arguments>
+<msg timestamp="20200514 14:58:35.137" level="INFO">Opening browser 'firefox' to base url 'https://lambdatest.github.io/sample-todo-app/' through remote server at 'http://prateeks:IuCSesD83A7LsTFzEKS0Lb6tzvEfBQ38DMkFTEpudatxxxsdjH@hub.lambdatest.com/wd/hub'.</msg>
+<status status="PASS" endtime="20200514 14:59:58.851" starttime="20200514 14:58:35.135"></status>
+</kw>
+<timeout value="50 minutes"></timeout>
+<status status="PASS" endtime="20200514 14:59:58.851" starttime="20200514 14:58:35.134"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>name:li1</arg>
+</arguments>
+<msg timestamp="20200514 14:59:59.415" level="INFO">Current page contains element 'name:li1'.</msg>
+<status status="PASS" endtime="20200514 14:59:59.416" starttime="20200514 14:59:58.852"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>name:li2</arg>
+</arguments>
+<msg timestamp="20200514 15:00:00.002" level="INFO">Current page contains element 'name:li2'.</msg>
+<status status="PASS" endtime="20200514 15:00:00.003" starttime="20200514 14:59:59.418"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>name:li1</arg>
+</arguments>
+<msg timestamp="20200514 15:00:00.007" level="INFO">Clicking button 'name:li1'.</msg>
+<status status="PASS" endtime="20200514 15:00:01.951" starttime="20200514 15:00:00.005"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>name:li2</arg>
+</arguments>
+<msg timestamp="20200514 15:00:01.954" level="INFO">Clicking button 'name:li2'.</msg>
+<status status="PASS" endtime="20200514 15:00:04.042" starttime="20200514 15:00:01.952"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:sampletodotext</arg>
+<arg>Yey Let's add it to list</arg>
+</arguments>
+<msg timestamp="20200514 15:00:04.045" level="INFO">Typing text 'Yey Let's add it to list' into text field 'id:sampletodotext'.</msg>
+<status status="PASS" endtime="20200514 15:00:05.774" starttime="20200514 15:00:04.044"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:addbutton</arg>
+</arguments>
+<msg timestamp="20200514 15:00:05.777" level="INFO">Clicking button 'id:addbutton'.</msg>
+<status status="PASS" endtime="20200514 15:00:07.728" starttime="20200514 15:00:05.775"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/div/div/div/ul/li[6]/span</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200514 15:00:08.872" level="INFO">${response} = Yey Let's add it to list</msg>
+<status status="PASS" endtime="20200514 15:00:08.872" starttime="20200514 15:00:07.728"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>Yey Let's add it to list</arg>
+</arguments>
+<status status="PASS" endtime="20200514 15:00:08.875" starttime="20200514 15:00:08.873"></status>
+</kw>
+<kw type="teardown" name="Close test browser" library="Common">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Report Lambdatest Status</arg>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+</arguments>
+<kw name="Report Lambdatest Status" library="LambdaTestStatus">
+<arguments>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+</arguments>
+<msg timestamp="20200514 15:00:08.890" level="INFO">Executing JavaScript:
+lambda-status=passed
+Without any arguments.</msg>
+<msg timestamp="20200514 15:00:10.366" level="INFO">Executing JavaScript:
+lambda-name=Example of connecting to Lambdatest via Robot Framework
+Without any arguments.</msg>
+<status status="PASS" endtime="20200514 15:00:11.816" starttime="20200514 15:00:08.887"></status>
+</kw>
+<status status="PASS" endtime="20200514 15:00:11.817" starttime="20200514 15:00:08.886"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200514 15:00:12.781" starttime="20200514 15:00:11.817"></status>
+</kw>
+<status status="PASS" endtime="20200514 15:00:12.781" starttime="20200514 15:00:08.884"></status>
+</kw>
+<timeout value="50 minutes"></timeout>
+<status status="PASS" endtime="20200514 15:00:12.781" critical="yes" starttime="20200514 14:58:35.133"></status>
+</test>
+<status status="PASS" endtime="20200514 15:00:12.784" starttime="20200514 14:58:34.884"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Sample Test" pass="1">Sample Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
